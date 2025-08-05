@@ -20,7 +20,16 @@ from pathlib import Path
     "app_sub_action_type.sql",
     "auto_adjust_advice.sql",
     "auto_adjust_qualifier.sql",
-    "auto_adjust_rule.sql"
+    "auto_adjust_rule.sql",
+    "billing_archetype.sql",
+    "billing_entity.sql",
+    "billing_entity_config.sql",
+    "billing_event_history.sql",
+    "billing_hierarchy.sql",
+    "billing_hierarchy_cycle.sql",
+    "billing_hierarchy_type.sql",
+    "billing_pseudo_entity.sql",
+    "billing_schedule.sql"
 ])
 def test_ebb_models_exist_and_run(sql_file):
     """Test that each SQL file has a corresponding Python model that runs successfully."""
