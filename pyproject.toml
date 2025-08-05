@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Generates json for use when diffing EBB shadow info"
 authors = [{name = "Matt Rixman", email = "matt.rixman@clover.com"}]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pydantic>=2.11.7",
+]
 
 [project.scripts]
 hello = "demo.main:main"
