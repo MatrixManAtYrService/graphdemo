@@ -1,0 +1,20 @@
+CREATE TABLE `adjust_action_fee_code_audit` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `audit_action` enum('UPDATE','DELETE') NOT NULL,
+  `audit_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `adjust_action_fee_code_id` bigint unsigned NOT NULL,
+  `uuid` char(26) NOT NULL,
+  `developer_uuid` char(13) DEFAULT NULL,
+  `developer_app_uuid` char(13) DEFAULT NULL,
+  `adjust_reason` varchar(20) NOT NULL,
+  `adjust_action_type` varchar(25) NOT NULL,
+  `effective_date` date NOT NULL,
+  `fee_category` varchar(25) NOT NULL,
+  `fee_code` varchar(25) NOT NULL,
+  `deleted_date` date DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `modified_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `adjust_action_fee_code_audit_key1` (`uuid`,`id`)
+);

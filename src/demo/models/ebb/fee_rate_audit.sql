@@ -1,0 +1,21 @@
+CREATE TABLE `fee_rate_audit` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `audit_action` enum('UPDATE','DELETE') NOT NULL,
+  `audit_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `fee_rate_id` bigint unsigned NOT NULL,
+  `uuid` char(26) NOT NULL,
+  `billing_entity_uuid` char(26) DEFAULT NULL,
+  `fee_category` varchar(25) DEFAULT NULL,
+  `fee_code` varchar(25) DEFAULT NULL,
+  `currency` char(3) DEFAULT NULL,
+  `effective_date` date DEFAULT NULL,
+  `apply_type` enum('DEFAULT','PER_ITEM','PERCENTAGE','BOTH','NONE','FLAT') DEFAULT NULL,
+  `per_item_amount` decimal(12,3) DEFAULT NULL,
+  `percentage` decimal(5,2) DEFAULT NULL,
+  `created_timestamp` datetime(6) DEFAULT NULL,
+  `modified_timestamp` datetime(6) DEFAULT NULL,
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fee_rate_audit_key1` (`uuid`,`id`),
+  KEY `fee_rate_audit_key2` (`billing_entity_uuid`,`fee_category`,`fee_code`,`currency`,`effective_date`,`id`)
+);

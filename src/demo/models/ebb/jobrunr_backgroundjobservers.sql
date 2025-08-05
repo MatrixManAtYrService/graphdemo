@@ -1,0 +1,20 @@
+CREATE TABLE `jobrunr_backgroundjobservers` (
+`id` char(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `workerPoolSize` int NOT NULL,
+  `pollIntervalInSeconds` int NOT NULL,
+  `firstHeartbeat` datetime(6) NOT NULL,
+  `lastHeartbeat` datetime(6) NOT NULL,
+  `running` int NOT NULL,
+  `systemTotalMemory` bigint NOT NULL,
+  `systemFreeMemory` bigint NOT NULL,
+  `systemCpuLoad` decimal(3,2) NOT NULL,
+  `processMaxMemory` bigint NOT NULL,
+  `processFreeMemory` bigint NOT NULL,
+  `processAllocatedMemory` bigint NOT NULL,
+  `processCpuLoad` decimal(3,2) NOT NULL,
+  `deleteSucceededJobsAfter` varchar(32) COLLATE utf8mb3_bin DEFAULT NULL,
+  `permanentlyDeleteJobsAfter` varchar(32) COLLATE utf8mb3_bin DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobrunr_bgjobsrvrs_fsthb_idx` (`firstHeartbeat`),
+  KEY `jobrunr_bgjobsrvrs_lsthb_idx` (`lastHeartbeat`)
+);

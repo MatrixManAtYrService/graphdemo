@@ -1,0 +1,20 @@
+CREATE TABLE `fee_code_ledger_account_audit` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `audit_action` enum('UPDATE','DELETE') NOT NULL,
+  `audit_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `fee_code_ledger_account_id` bigint unsigned NOT NULL,
+  `uuid` char(26) NOT NULL,
+  `fee_category` varchar(25) DEFAULT NULL,
+  `fee_code` varchar(25) DEFAULT NULL,
+  `effective_date` date DEFAULT NULL,
+  `credit_ledger_account_key` varchar(32) DEFAULT NULL,
+  `credit_billing_entity_uuid_source` enum('TRANSACTION','CLOVER','ROLLUP_1','ROLLUP_2','ROLLUP_3') DEFAULT NULL,
+  `debit_ledger_account_key` varchar(32) DEFAULT NULL,
+  `debit_billing_entity_uuid_source` enum('TRANSACTION','CLOVER','ROLLUP_1','ROLLUP_2','ROLLUP_3') DEFAULT NULL,
+  `deleted_date` date DEFAULT NULL,
+  `created_timestamp` datetime(6) DEFAULT NULL,
+  `modified_timestamp` datetime(6) DEFAULT NULL,
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fee_code_ledger_account_audit_key1` (`uuid`,`id`)
+);

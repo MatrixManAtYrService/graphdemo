@@ -1,0 +1,20 @@
+CREATE TABLE `billing_schedule` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `billing_entity_uuid` char(26) NOT NULL,
+  `effective_date` date NOT NULL,
+  `frequency` enum('NO_BILL','MONTHLY') NOT NULL,
+  `billing_day` smallint NOT NULL,
+  `next_billing_date` date NOT NULL,
+  `last_billing_date` date DEFAULT NULL,
+  `units_in_next_period` smallint NOT NULL,
+  `units_in_last_period` smallint DEFAULT NULL,
+  `default_currency` char(3) NOT NULL,
+  `close_date` date DEFAULT NULL,
+  `effective_close_date` date DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `modified_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `billing_schedule_key1` (`uuid`),
+  UNIQUE KEY `billing_schedule_key2` (`billing_entity_uuid`,`effective_date`)
+);
