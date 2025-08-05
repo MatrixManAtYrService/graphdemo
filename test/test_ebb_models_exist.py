@@ -29,7 +29,15 @@ from pathlib import Path
     "billing_hierarchy_cycle.sql",
     "billing_hierarchy_type.sql",
     "billing_pseudo_entity.sql",
-    "billing_schedule.sql"
+    "billing_schedule.sql",
+    "cellular_action.sql",
+    "cellular_action_error.sql",
+    "cellular_action_fee_code.sql",
+    "cellular_action_type.sql",
+    "consumer_failure.sql",
+    "consumer_failure_history.sql",
+    "cycle_validation.sql",
+    "cycle_validation_mutation.sql"
 ])
 def test_ebb_models_exist_and_run(sql_file):
     """Test that each SQL file has a corresponding Python model that runs successfully."""
