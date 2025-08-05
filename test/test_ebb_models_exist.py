@@ -4,7 +4,24 @@ import pytest
 from pathlib import Path
 
 
-@pytest.mark.parametrize("sql_file", ["plan_action.sql", "adjust_action.sql", "adjust_action_fee_code.sql"])
+@pytest.mark.parametrize("sql_file", [
+    "plan_action.sql", 
+    "adjust_action.sql", 
+    "adjust_action_fee_code.sql", 
+    "adjust_action_type.sql", 
+    "adjust_reason.sql", 
+    "app_meter_action.sql",
+    "app_meter_action_error.sql",
+    "app_meter_action_fee_code.sql",
+    "app_meter_action_type.sql",
+    "app_sub_action.sql",
+    "app_sub_action_error.sql",
+    "app_sub_action_fee_code.sql",
+    "app_sub_action_type.sql",
+    "auto_adjust_advice.sql",
+    "auto_adjust_qualifier.sql",
+    "auto_adjust_rule.sql"
+])
 def test_ebb_models_exist_and_run(sql_file):
     """Test that each SQL file has a corresponding Python model that runs successfully."""
     base_path = Path("src/demo/models/ebb")
