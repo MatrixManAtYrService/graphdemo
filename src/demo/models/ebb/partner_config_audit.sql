@@ -1,0 +1,22 @@
+CREATE TABLE `partner_config_audit` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `audit_action` enum('UPDATE','DELETE') NOT NULL,
+  `audit_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `partner_config_id` bigint unsigned NOT NULL,
+  `uuid` char(26) NOT NULL,
+  `billing_entity_uuid` char(26) DEFAULT NULL,
+  `hierarchy_type` varchar(20) DEFAULT NULL,
+  `effective_date` date DEFAULT NULL,
+  `revenue_share_group` varchar(20) DEFAULT NULL,
+  `post_method` varchar(20) DEFAULT NULL,
+  `plan_billing_method` varchar(20) DEFAULT NULL,
+  `invoice_method` varchar(20) DEFAULT NULL,
+  `invoice_number_format` varchar(20) DEFAULT NULL,
+  `settlement_method` varchar(20) DEFAULT NULL,
+  `seasonal_rule_set_uuid` varchar(26) DEFAULT NULL,
+  `created_timestamp` datetime(6) DEFAULT NULL,
+  `modified_timestamp` datetime(6) DEFAULT NULL,
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `partner_config_audit_key1` (`uuid`,`id`)
+);

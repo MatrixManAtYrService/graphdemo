@@ -1,0 +1,21 @@
+CREATE TABLE `ledger_account_settlement` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `ledger_account_key` varchar(32) NOT NULL,
+  `effective_date` date NOT NULL,
+  `settlement_item_code` varchar(30) DEFAULT NULL,
+  `settlement_desc` varchar(100) DEFAULT NULL,
+  `fee_category_group` varchar(25) DEFAULT NULL,
+  `revenue_group` varchar(25) DEFAULT NULL,
+  `merchant_plan_uuid` char(13) DEFAULT NULL,
+  `developer_uuid` varchar(13) DEFAULT NULL,
+  `developer_app_uuid` varchar(13) DEFAULT NULL,
+  `app_subscription_uuid` varchar(13) DEFAULT NULL,
+  `app_metered_uuid` varchar(13) DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `modified_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ledger_account_settlement_key1` (`uuid`),
+  UNIQUE KEY `ledger_account_settlement_key2` (`ledger_account_key`,`effective_date`)
+);

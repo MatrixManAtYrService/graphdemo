@@ -1,0 +1,20 @@
+CREATE TABLE `ledger_account_transition` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `action` varchar(25) NOT NULL,
+  `effective_date` date NOT NULL,
+  `lookup_ledger_account_key` varchar(32) NOT NULL,
+  `credit_ledger_account_key` varchar(32) NOT NULL,
+  `credit_billing_entity_uuid_source` enum('TRANSACTION','CLOVER','ROLLUP_1','ROLLUP_2','ROLLUP_3') NOT NULL,
+  `debit_ledger_account_key` varchar(32) NOT NULL,
+  `debit_billing_entity_uuid_source` enum('TRANSACTION','CLOVER','ROLLUP_1','ROLLUP_2','ROLLUP_3') NOT NULL,
+  `deleted_date` date DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `modified_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `audit_id` varchar(26) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ledger_account_transition_key1` (`uuid`),
+  UNIQUE KEY `ledger_account_transition_key2` (`action`,`lookup_ledger_account_key`,`effective_date`),
+  KEY `ledger_account_transition_key3` (`credit_ledger_account_key`,`effective_date`,`action`),
+  KEY `ledger_account_transition_key4` (`debit_ledger_account_key`,`effective_date`,`action`)
+);

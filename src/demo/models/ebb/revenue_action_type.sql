@@ -1,0 +1,9 @@
+CREATE TABLE `revenue_action_type` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `revenue_action_type` varchar(25) NOT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `revenue_action_type_key1` (`uuid`),
+  UNIQUE KEY `revenue_action_type_key2` (`revenue_action_type`)
+);

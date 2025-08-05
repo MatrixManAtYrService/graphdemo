@@ -1,0 +1,23 @@
+CREATE TABLE `model_fee_summary` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `billing_entity_uuid` char(26) NOT NULL,
+  `billing_date` date NOT NULL,
+  `fee_category` varchar(25) NOT NULL,
+  `fee_code` varchar(25) NOT NULL,
+  `currency` char(3) NOT NULL,
+  `total_period_units` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `total_basis_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `total_fee_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `fee_rate_uuid` char(26) NOT NULL,
+  `request_uuid` char(26) NOT NULL,
+  `invoice_info_uuid` varchar(26) DEFAULT NULL,
+  `fee_code_ledger_account_uuid` varchar(26) DEFAULT NULL,
+  `credit_ledger_account_uuid` varchar(26) DEFAULT NULL,
+  `debit_ledger_account_uuid` varchar(26) DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `modified_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `model_fee_summary_key1` (`uuid`),
+  UNIQUE KEY `model_fee_summary_key2` (`billing_entity_uuid`,`billing_date`,`fee_category`,`fee_code`,`currency`)
+);

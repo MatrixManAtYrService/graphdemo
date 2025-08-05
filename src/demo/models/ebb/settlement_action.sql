@@ -1,0 +1,23 @@
+CREATE TABLE `settlement_action` (
+`id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(26) NOT NULL,
+  `settlement_uuid` char(26) NOT NULL,
+  `action_date` date NOT NULL,
+  `action` varchar(25) NOT NULL,
+  `currency` char(3) NOT NULL,
+  `total_amount` decimal(12,3) NOT NULL,
+  `fee_amount` decimal(12,3) NOT NULL,
+  `tax1_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `tax2_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `tax3_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `tax4_amount` decimal(12,3) NOT NULL DEFAULT '0.000',
+  `reject_code` varchar(10) DEFAULT NULL,
+  `message` varchar(1024) DEFAULT NULL,
+  `ledger_account_transition_uuid` varchar(26) DEFAULT NULL,
+  `credit_ledger_account_uuid` varchar(26) DEFAULT NULL,
+  `debit_ledger_account_uuid` varchar(26) DEFAULT NULL,
+  `created_timestamp` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `settlement_action_key1` (`uuid`),
+  UNIQUE KEY `settlement_action_key2` (`settlement_uuid`,`action_date` DESC,`id`)
+);
