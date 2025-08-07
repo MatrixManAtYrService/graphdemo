@@ -14,11 +14,8 @@ class MinimalInvoiceInfoMixin:
     # favor ones that seem fundamental to calculating an amount that will appear on a bill
     # a human can adjust this field later if they want to see more or less
     MINIMAL_FIELDS = {
-        'billing_date',
-        'invoice_num',
         'currency',
         'total_amount',
-        'alternate_id',
     }
 
     def to_minimal_dict(self) -> dict:

@@ -14,13 +14,11 @@ class MinimalFeeSummaryMixin:
     # favor ones that seem fundamental to calculating an amount that will appear on a bill
     # a human can adjust this field later if they want to see more or less
     MINIMAL_FIELDS = {
-        'billing_date',
         'fee_category',
         'fee_code',
-        'currency',
-        'total_fee_amount',
         'total_period_units',
-        'exclude_from_invoice',
+        'total_fee_amount',
+        'total_basis_amount',
     }
 
     def to_minimal_dict(self) -> dict:
