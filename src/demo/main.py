@@ -124,6 +124,54 @@ def create_pydantic_objects():
         audit_id=None
     )
     
+    fee_rate_4 = FeeRate(
+        id=173,
+        uuid="2G767D60KKG18208768S4C1HM8",
+        billing_entity_uuid="8E7KTPHJRBHP16EQB5RS2P8D0Q",
+        fee_category="DEVICE_RETAIL",
+        fee_code="RegisterPDVT",
+        currency="USD",
+        effective_date=date.fromisoformat("2025-01-01"),
+        apply_type=ApplyType.PER_ITEM,
+        per_item_amount=Decimal("19.95"),
+        percentage=None,
+        created_timestamp=datetime.fromisoformat("2025-01-30T16:38:02.379723"),
+        modified_timestamp=datetime.fromisoformat("2025-01-30T16:38:33.706835"),
+        audit_id="STEKRDE0YS244"
+    )
+    
+    fee_rate_5 = FeeRate(
+        id=193,
+        uuid="KG9ABT30FRKVX39VRV82CBDKJF",
+        billing_entity_uuid="8E7KTPHJRBHP16EQB5RS2P8D0Q",
+        fee_category="DEVICE_RETAIL_MOD",
+        fee_code="RegisterPDVTIncl1st",
+        currency="USD",
+        effective_date=date.fromisoformat("2025-01-01"),
+        apply_type=ApplyType.PER_ITEM,
+        per_item_amount=Decimal("-19.95"),
+        percentage=None,
+        created_timestamp=datetime.fromisoformat("2025-01-30T16:38:02.480183"),
+        modified_timestamp=datetime.fromisoformat("2025-01-30T16:38:33.706835"),
+        audit_id="STEKRDE0YS244"
+    )
+    
+    fee_rate_6 = FeeRate(
+        id=169,
+        uuid="DF6FE39FRQHVXJKVVN9WTDSGWX",
+        billing_entity_uuid="8E7KTPHJRBHP16EQB5RS2P8D0Q",
+        fee_category="PLAN_RETAIL",
+        fee_code="RegisterPDVT",
+        currency="USD",
+        effective_date=date.fromisoformat("2025-01-01"),
+        apply_type=ApplyType.PER_ITEM,
+        per_item_amount=Decimal("49.95"),
+        percentage=None,
+        created_timestamp=datetime.fromisoformat("2025-01-30T16:38:02.359401"),
+        modified_timestamp=datetime.fromisoformat("2025-01-30T16:38:33.706835"),
+        audit_id="STEKRDE0YS244"
+    )
+    
     # Create fee summaries
     fee_summary_1 = FeeSummary(
         id=74347,
@@ -197,6 +245,78 @@ def create_pydantic_objects():
         modified_timestamp=datetime.fromisoformat("2025-06-02T15:06:43.387646")
     )
     
+    fee_summary_4 = FeeSummary(
+        id=74349,
+        uuid="VC74T4AJ9R5X148DSRS95R5PF3",
+        billing_entity_uuid="JW8H2B9BT6B11R2HHXY3HYQCN6",
+        billing_date=date.fromisoformat("2025-06-01"),
+        fee_category="DEVICE_RETAIL",
+        fee_code="RegisterPDVT",
+        currency="USD",
+        total_period_units=Decimal("3"),
+        abs_period_units=Decimal("3"),
+        total_basis_amount=Decimal("0"),
+        abs_basis_amount=Decimal("0"),
+        total_fee_amount=Decimal("59.85"),
+        fee_rate_uuid="2G767D60KKG18208768S4C1HM8",
+        request_uuid="KNFZA2P2E2KMGKMATSY1RSD8TY",
+        invoice_info_uuid="NFX80F4EH68BEW08384RX7RBMC",
+        fee_code_ledger_account_uuid="JZ4Q82HKC14JDAE8YYZZYWKB0X",
+        credit_ledger_account_uuid="HSMJRPH5WVCCV4WKW04CX6ZJG5",
+        debit_ledger_account_uuid="62PXBE9JK6QXA65WHY3G5G0K01",
+        exclude_from_invoice=0,
+        created_timestamp=datetime.fromisoformat("2025-06-02T14:56:15.973521"),
+        modified_timestamp=datetime.fromisoformat("2025-06-02T15:06:43.387646")
+    )
+    
+    fee_summary_5 = FeeSummary(
+        id=74350,
+        uuid="9VEDCKTVN2PTAYAQ8TCQV3ZNGZ",
+        billing_entity_uuid="JW8H2B9BT6B11R2HHXY3HYQCN6",
+        billing_date=date.fromisoformat("2025-06-01"),
+        fee_category="DEVICE_RETAIL_MOD",
+        fee_code="RegisterPDVTIncl1st",
+        currency="USD",
+        total_period_units=Decimal("1"),
+        abs_period_units=Decimal("1"),
+        total_basis_amount=Decimal("0"),
+        abs_basis_amount=Decimal("0"),
+        total_fee_amount=Decimal("-19.95"),
+        fee_rate_uuid="KG9ABT30FRKVX39VRV82CBDKJF",
+        request_uuid="KNFZA2P2E2KMGKMATSY1RSD8TY",
+        invoice_info_uuid="NFX80F4EH68BEW08384RX7RBMC",
+        fee_code_ledger_account_uuid="H1HH56GWY4VWTDP6VQ3977EKNG",
+        credit_ledger_account_uuid="2SNQPEXR2T0PX6Y36NWQSRZNRJ",
+        debit_ledger_account_uuid="62PXBE9JK6QXA65WHY3G5G0K01",
+        exclude_from_invoice=0,
+        created_timestamp=datetime.fromisoformat("2025-06-02T14:56:15.979936"),
+        modified_timestamp=datetime.fromisoformat("2025-06-02T15:06:43.387646")
+    )
+    
+    fee_summary_6 = FeeSummary(
+        id=74351,
+        uuid="FD7GD3YK93ZZS4C1DA6C7W9AER",
+        billing_entity_uuid="JW8H2B9BT6B11R2HHXY3HYQCN6",
+        billing_date=date.fromisoformat("2025-06-01"),
+        fee_category="PLAN_RETAIL",
+        fee_code="RegisterPDVT",
+        currency="USD",
+        total_period_units=Decimal("1"),
+        abs_period_units=Decimal("1"),
+        total_basis_amount=Decimal("0"),
+        abs_basis_amount=Decimal("0"),
+        total_fee_amount=Decimal("49.95"),
+        fee_rate_uuid="DF6FE39FRQHVXJKVVN9WTDSGWX",
+        request_uuid="KNFZA2P2E2KMGKMATSY1RSD8TY",
+        invoice_info_uuid="NFX80F4EH68BEW08384RX7RBMC",
+        fee_code_ledger_account_uuid="GCCQKS6H40NBQKS6KC4F31WAZY",
+        credit_ledger_account_uuid="HSMJRPH5WVCCV4WKW04CX6ZJG5",
+        debit_ledger_account_uuid="62PXBE9JK6QXA65WHY3G5G0K01",
+        exclude_from_invoice=0,
+        created_timestamp=datetime.fromisoformat("2025-06-02T14:56:15.987500"),
+        modified_timestamp=datetime.fromisoformat("2025-06-02T15:06:43.387646")
+    )
+    
     # Create settlements
     settlement_1 = Settlement(
         id=6256,
@@ -246,6 +366,54 @@ def create_pydantic_objects():
         modified_timestamp=datetime.fromisoformat("2025-06-02T16:09:52")
     )
     
+    settlement_3 = Settlement(
+        id=6257,
+        uuid="8FNKVQ3SSHT2N7AVW3KH8DS00R",
+        settlement_date=date.fromisoformat("2025-06-01"),
+        billing_entity_uuid="JW8H2B9BT6B11R2HHXY3HYQCN6",
+        entity_uuid="062X8PVY3XWB1",
+        alternate_id="209225173886",
+        payable_receivable="RECEIVABLE",
+        currency="USD",
+        total_amount=Decimal("99"),
+        fee_amount=Decimal("99"),
+        tax1_amount=Decimal("0"),
+        tax2_amount=Decimal("0"),
+        tax3_amount=Decimal("0"),
+        tax4_amount=Decimal("0"),
+        lookup_ledger_account_key="Incur.App.VX7BFWEXXQ1CW",
+        gl_code="51501",
+        item_code="VX7BFWEXXQ1CW",
+        last_invoice_num="202506/000006200",
+        request_uuid="CQ95HJ649AXSDG6RF4Z71Z8ATD",
+        created_timestamp=datetime.fromisoformat("2025-06-02T16:09:51.683242"),
+        modified_timestamp=datetime.fromisoformat("2025-06-02T16:09:52")
+    )
+    
+    settlement_4 = Settlement(
+        id=6258,
+        uuid="VS6EVR8GK3AWAKV8SAK4HJFC77",
+        settlement_date=date.fromisoformat("2025-06-01"),
+        billing_entity_uuid="JW8H2B9BT6B11R2HHXY3HYQCN6",
+        entity_uuid="062X8PVY3XWB1",
+        alternate_id="209225173886",
+        payable_receivable="RECEIVABLE",
+        currency="USD",
+        total_amount=Decimal("89.85"),
+        fee_amount=Decimal("89.85"),
+        tax1_amount=Decimal("0"),
+        tax2_amount=Decimal("0"),
+        tax3_amount=Decimal("0"),
+        tax4_amount=Decimal("0"),
+        lookup_ledger_account_key="Incur.Plan",
+        gl_code="51505",
+        item_code="V20071.0000",
+        last_invoice_num="202506/000006200",
+        request_uuid="CQ95HJ649AXSDG6RF4Z71Z8ATD",
+        created_timestamp=datetime.fromisoformat("2025-06-02T16:09:51.700076"),
+        modified_timestamp=datetime.fromisoformat("2025-06-02T16:09:52")
+    )
+    
     return {
         "merchant_billing_entity": merchant_billing_entity,
         "clover_billing_entity": clover_billing_entity,
@@ -254,11 +422,19 @@ def create_pydantic_objects():
         "fee_rate_1": fee_rate_1,
         "fee_rate_2": fee_rate_2,
         "fee_rate_3": fee_rate_3,
+        "fee_rate_4": fee_rate_4,
+        "fee_rate_5": fee_rate_5,
+        "fee_rate_6": fee_rate_6,
         "fee_summary_1": fee_summary_1,
         "fee_summary_2": fee_summary_2,
         "fee_summary_3": fee_summary_3,
+        "fee_summary_4": fee_summary_4,
+        "fee_summary_5": fee_summary_5,
+        "fee_summary_6": fee_summary_6,
         "settlement_1": settlement_1,
-        "settlement_2": settlement_2
+        "settlement_2": settlement_2,
+        "settlement_3": settlement_3,
+        "settlement_4": settlement_4
     }
 
 
@@ -277,11 +453,19 @@ def create_graph() -> nx.DiGraph:
     G.add_node("fee_rate_1", **create_node_data(data["fee_rate_1"], "fee_rate"))
     G.add_node("fee_rate_2", **create_node_data(data["fee_rate_2"], "fee_rate"))
     G.add_node("fee_rate_3", **create_node_data(data["fee_rate_3"], "fee_rate"))
+    G.add_node("fee_rate_4", **create_node_data(data["fee_rate_4"], "fee_rate"))
+    G.add_node("fee_rate_5", **create_node_data(data["fee_rate_5"], "fee_rate"))
+    G.add_node("fee_rate_6", **create_node_data(data["fee_rate_6"], "fee_rate"))
     G.add_node("fee_summary_1", **create_node_data(data["fee_summary_1"], "fee_summary"))
     G.add_node("fee_summary_2", **create_node_data(data["fee_summary_2"], "fee_summary"))
     G.add_node("fee_summary_3", **create_node_data(data["fee_summary_3"], "fee_summary"))
+    G.add_node("fee_summary_4", **create_node_data(data["fee_summary_4"], "fee_summary"))
+    G.add_node("fee_summary_5", **create_node_data(data["fee_summary_5"], "fee_summary"))
+    G.add_node("fee_summary_6", **create_node_data(data["fee_summary_6"], "fee_summary"))
     G.add_node("settlement_1", **create_node_data(data["settlement_1"], "settlement"))
     G.add_node("settlement_2", **create_node_data(data["settlement_2"], "settlement"))
+    G.add_node("settlement_3", **create_node_data(data["settlement_3"], "settlement"))
+    G.add_node("settlement_4", **create_node_data(data["settlement_4"], "settlement"))
     
     # Create explicit connections following the specified flow:
     # billing_entity -> invoice_info -> fee_rate -> fee_summary -> settlement -> other billing_entities
@@ -293,20 +477,30 @@ def create_graph() -> nx.DiGraph:
     G.add_edges_from([
         ("invoice_info_1", "fee_rate_1"),
         ("invoice_info_1", "fee_rate_2"),
-        ("invoice_info_1", "fee_rate_3")
+        ("invoice_info_1", "fee_rate_3"),
+        ("invoice_info_1", "fee_rate_4"),
+        ("invoice_info_1", "fee_rate_5"),
+        ("invoice_info_1", "fee_rate_6")
     ])
     
     # fee_rates -> fee_summaries (each fee_rate connects to its corresponding fee_summary)
     G.add_edges_from([
         ("fee_rate_1", "fee_summary_1"),  # MW63DAWPN6JGY.S -> 9.99 summary
         ("fee_rate_2", "fee_summary_2"),  # E2ATEB4GHYFCE.S -> 59.99 summary
-        ("fee_rate_3", "fee_summary_3")   # BCMPKE5Z10A38.S -> 99 summary
+        ("fee_rate_3", "fee_summary_3"),  # BCMPKE5Z10A38.S -> 99 summary
+        ("fee_rate_4", "fee_summary_4"),  # RegisterPDVT (device retail) -> 59.85 summary
+        ("fee_rate_5", "fee_summary_5"),  # RegisterPDVTIncl1st (device mod) -> -19.95 summary
+        ("fee_rate_6", "fee_summary_6")   # RegisterPDVT (plan retail) -> 49.95 summary
     ])
     
-    # fee_summaries -> settlements (based on amounts matching)
+    # fee_summaries -> settlements (based on amounts and flow)
     G.add_edges_from([
         ("fee_summary_1", "settlement_1"),  # 9.99 summary -> 9.99 settlement
-        ("fee_summary_2", "settlement_2")   # 59.99 summary -> 59.99 settlement
+        ("fee_summary_2", "settlement_2"),  # 59.99 summary -> 59.99 settlement
+        ("fee_summary_3", "settlement_3"),  # 99 summary -> 99 settlement
+        ("fee_summary_4", "settlement_4"),  # 59.85 summary -> 89.85 settlement (combined with summary 6)
+        ("fee_summary_5", "settlement_4"),  # -19.95 summary -> 89.85 settlement (combined with summary 4)
+        ("fee_summary_6", "settlement_4")   # 49.95 summary -> 89.85 settlement (combined with summaries 4,5)
     ])
     
     # settlements -> other billing entities (Clover and US Customer Support)
@@ -314,7 +508,11 @@ def create_graph() -> nx.DiGraph:
         ("settlement_1", "billing_entity_clover"),
         ("settlement_1", "billing_entity_us_support"),
         ("settlement_2", "billing_entity_clover"),
-        ("settlement_2", "billing_entity_us_support")
+        ("settlement_2", "billing_entity_us_support"),
+        ("settlement_3", "billing_entity_clover"),
+        ("settlement_3", "billing_entity_us_support"),
+        ("settlement_4", "billing_entity_clover"),
+        ("settlement_4", "billing_entity_us_support")
     ])
     
     return G
