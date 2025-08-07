@@ -1,0 +1,16 @@
+[
+  {
+    "id": 6200,
+    "uuid": "NFX80F4EH68BEW08384RX7RBMC",
+    "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
+    "entity_uuid": "062X8PVY3XWB1",
+    "alternate_id": 209225173886,
+    "billing_date": "2025-06-01",
+    "invoice_num": "202506/000006200",
+    "currency": "USD",
+    "total_amount": 258.83,
+    "document_uuid": "RED0GSNS27W2XG1FQ25VVFEEXH",
+    "request_uuid": "CW6456TXW4N934RVY27G5E5CDB",
+    "created_timestamp": "2025-06-02 15:06:43.378289"
+  }
+]

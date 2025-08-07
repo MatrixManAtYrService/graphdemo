@@ -1,0 +1,29 @@
+[
+  {
+    "id": 3,
+    "uuid": "8E7KTPHJRBHP16EQB5RS2P8D0Q",
+    "entity_uuid": "V9Z9C6EX72SY2",
+    "entity_type": "RESELLER",
+    "name": "US Customer Support",
+    "created_timestamp": "2025-01-30 16:37:56.379038",
+    "modified_timestamp": "2025-01-30 16:37:56.379038"
+  },
+  {
+    "id": 1195,
+    "uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
+    "entity_uuid": "062X8PVY3XWB1",
+    "entity_type": "MERCHANT",
+    "name": "MerchantMcMerchantface",
+    "created_timestamp": "2025-02-26 17:06:39.670150",
+    "modified_timestamp": "2025-02-26 17:06:39.670150"
+  },
+  {
+    "id": 1,
+    "uuid": "M4JT4XQCPWPMW7WGA4G1Z5NGED",
+    "entity_uuid": "S7VJZXH057ZHC",
+    "entity_type": "RESELLER",
+    "name": "Clover",
+    "created_timestamp": "2025-01-30 16:37:56.379038",
+    "modified_timestamp": "2025-01-30 16:37:56.379038"
+  }
+]
