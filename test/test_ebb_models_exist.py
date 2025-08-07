@@ -95,7 +95,21 @@ from pathlib import Path
     "processing_note.sql",
     "processing_note_mutation.sql",
     "prototype_fee_rate.sql",
-    "prototype_fee_set.sql"
+    "prototype_fee_set.sql",
+    "revenue_action.sql",
+    "revenue_action_error.sql",
+    "revenue_action_fee_code.sql",
+    "revenue_action_type.sql",
+    "revenue_share_group.sql",
+    "server_config.sql",
+    "settlement.sql",
+    "settlement_action.sql",
+    "settlement_mutation.sql",
+    "skip_fee_category_lexi_tag.sql",
+    "tier_detail.sql",
+    "tiered_pricing.sql",
+    "tiered_qualifier.sql",
+    "tiered_rule.sql"
 ])
 def test_ebb_models_exist_and_run(sql_file):
     """Test that each SQL file has a corresponding Python model that runs successfully."""
