@@ -39,26 +39,6 @@ def create_pydantic_objects():
         modified_timestamp=datetime.fromisoformat("2025-02-26T17:06:39.670150")
     )
     
-    clover_billing_entity = BillingEntity(
-        id=1,
-        uuid="M4JT4XQCPWPMW7WGA4G1Z5NGED",
-        entity_uuid="S7VJZXH057ZHC",
-        entity_type=EntityType.RESELLER,
-        name="Clover",
-        created_timestamp=datetime.fromisoformat("2025-01-30T16:37:56.379038"),
-        modified_timestamp=datetime.fromisoformat("2025-01-30T16:37:56.379038")
-    )
-    
-    us_support_billing_entity = BillingEntity(
-        id=3,
-        uuid="8E7KTPHJRBHP16EQB5RS2P8D0Q",
-        entity_uuid="V9Z9C6EX72SY2",
-        entity_type=EntityType.RESELLER,
-        name="US Customer Support",
-        created_timestamp=datetime.fromisoformat("2025-01-30T16:37:56.379038"),
-        modified_timestamp=datetime.fromisoformat("2025-01-30T16:37:56.379038")
-    )
-    
     # Create invoice info
     invoice_info = InvoiceInfo(
         id=6200,
@@ -416,8 +396,6 @@ def create_pydantic_objects():
     
     return {
         "merchant_billing_entity": merchant_billing_entity,
-        "clover_billing_entity": clover_billing_entity,
-        "us_support_billing_entity": us_support_billing_entity,
         "invoice_info": invoice_info,
         "fee_rate_1": fee_rate_1,
         "fee_rate_2": fee_rate_2,
@@ -447,8 +425,6 @@ def create_graph() -> nx.DiGraph:
     
     # Add all nodes
     G.add_node("billing_entity_merchant", **create_node_data(data["merchant_billing_entity"], "billing_entity"))
-    G.add_node("billing_entity_clover", **create_node_data(data["clover_billing_entity"], "billing_entity"))
-    G.add_node("billing_entity_us_support", **create_node_data(data["us_support_billing_entity"], "billing_entity"))
     G.add_node("invoice_info_1", **create_node_data(data["invoice_info"], "invoice_info"))
     G.add_node("fee_rate_1", **create_node_data(data["fee_rate_1"], "fee_rate"))
     G.add_node("fee_rate_2", **create_node_data(data["fee_rate_2"], "fee_rate"))
@@ -468,29 +444,20 @@ def create_graph() -> nx.DiGraph:
     G.add_node("settlement_4", **create_node_data(data["settlement_4"], "settlement"))
     
     # Create explicit connections following the specified flow:
-    # billing_entity -> invoice_info -> fee_rate -> fee_summary -> settlement -> other billing_entities
+    # billing_entity -> invoice_info -> fee_summary -> settlement
+    # fee_rate nodes branch off from their corresponding fee_summary nodes
     
     # billing_entity (MerchantMcMerchantface) -> invoice_info
     G.add_edge("billing_entity_merchant", "invoice_info_1")
     
-    # invoice_info -> fee_rates (multiple connections)
+    # invoice_info -> fee_summaries (direct connection)
     G.add_edges_from([
-        ("invoice_info_1", "fee_rate_1"),
-        ("invoice_info_1", "fee_rate_2"),
-        ("invoice_info_1", "fee_rate_3"),
-        ("invoice_info_1", "fee_rate_4"),
-        ("invoice_info_1", "fee_rate_5"),
-        ("invoice_info_1", "fee_rate_6")
-    ])
-    
-    # fee_rates -> fee_summaries (each fee_rate connects to its corresponding fee_summary)
-    G.add_edges_from([
-        ("fee_rate_1", "fee_summary_1"),  # MW63DAWPN6JGY.S -> 9.99 summary
-        ("fee_rate_2", "fee_summary_2"),  # E2ATEB4GHYFCE.S -> 59.99 summary
-        ("fee_rate_3", "fee_summary_3"),  # BCMPKE5Z10A38.S -> 99 summary
-        ("fee_rate_4", "fee_summary_4"),  # RegisterPDVT (device retail) -> 59.85 summary
-        ("fee_rate_5", "fee_summary_5"),  # RegisterPDVTIncl1st (device mod) -> -19.95 summary
-        ("fee_rate_6", "fee_summary_6")   # RegisterPDVT (plan retail) -> 49.95 summary
+        ("invoice_info_1", "fee_summary_1"),
+        ("invoice_info_1", "fee_summary_2"),
+        ("invoice_info_1", "fee_summary_3"),
+        ("invoice_info_1", "fee_summary_4"),
+        ("invoice_info_1", "fee_summary_5"),
+        ("invoice_info_1", "fee_summary_6")
     ])
     
     # fee_summaries -> settlements (based on amounts and flow)
@@ -503,18 +470,16 @@ def create_graph() -> nx.DiGraph:
         ("fee_summary_6", "settlement_4")   # 49.95 summary -> 89.85 settlement (combined with summaries 4,5)
     ])
     
-    # settlements -> other billing entities (Clover and US Customer Support)
+    # fee_rates branch off from their corresponding fee_summaries
     G.add_edges_from([
-        ("settlement_1", "billing_entity_clover"),
-        ("settlement_1", "billing_entity_us_support"),
-        ("settlement_2", "billing_entity_clover"),
-        ("settlement_2", "billing_entity_us_support"),
-        ("settlement_3", "billing_entity_clover"),
-        ("settlement_3", "billing_entity_us_support"),
-        ("settlement_4", "billing_entity_clover"),
-        ("settlement_4", "billing_entity_us_support")
+        ("fee_summary_1", "fee_rate_1"),  # 9.99 summary -> MW63DAWPN6JGY.S rate
+        ("fee_summary_2", "fee_rate_2"),  # 59.99 summary -> E2ATEB4GHYFCE.S rate
+        ("fee_summary_3", "fee_rate_3"),  # 99 summary -> BCMPKE5Z10A38.S rate
+        ("fee_summary_4", "fee_rate_4"),  # 59.85 summary -> RegisterPDVT (device retail) rate
+        ("fee_summary_5", "fee_rate_5"),  # -19.95 summary -> RegisterPDVTIncl1st (device mod) rate
+        ("fee_summary_6", "fee_rate_6")   # 49.95 summary -> RegisterPDVT (plan retail) rate
     ])
-    
+       
     return G
 
 

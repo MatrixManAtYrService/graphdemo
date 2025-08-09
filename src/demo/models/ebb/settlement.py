@@ -16,7 +16,6 @@ class MinimalSettlementMixin:
     # a human can adjust this field later if they want to see more or less
     MINIMAL_FIELDS = {
         'lookup_ledger_account_key',
-        'currency',
         'total_amount',
     }
 

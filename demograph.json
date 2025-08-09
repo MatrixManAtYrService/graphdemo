@@ -16,40 +16,9 @@
       }
     },
     {
-      "id": "billing_entity_clover",
-      "table": "billing_entity",
-      "minimal": {
-        "entity_type": "RESELLER",
-        "name": "Clover"
-      },
-      "others": {
-        "id": 1,
-        "uuid": "M4JT4XQCPWPMW7WGA4G1Z5NGED",
-        "entity_uuid": "S7VJZXH057ZHC",
-        "created_timestamp": "2025-01-30 16:37:56.379038",
-        "modified_timestamp": "2025-01-30 16:37:56.379038"
-      }
-    },
-    {
-      "id": "billing_entity_us_support",
-      "table": "billing_entity",
-      "minimal": {
-        "entity_type": "RESELLER",
-        "name": "US Customer Support"
-      },
-      "others": {
-        "id": 3,
-        "uuid": "8E7KTPHJRBHP16EQB5RS2P8D0Q",
-        "entity_uuid": "V9Z9C6EX72SY2",
-        "created_timestamp": "2025-01-30 16:37:56.379038",
-        "modified_timestamp": "2025-01-30 16:37:56.379038"
-      }
-    },
-    {
       "id": "invoice_info_1",
       "table": "invoice_info",
       "minimal": {
-        "currency": "USD",
         "total_amount": "258.83"
       },
       "others": {
@@ -60,6 +29,7 @@
         "alternate_id": "209225173886",
         "billing_date": "2025-06-01",
         "invoice_num": "202506/000006200",
+        "currency": "USD",
         "document_uuid": "RED0GSNS27W2XG1FQ25VVFEEXH",
         "request_uuid": "CW6456TXW4N934RVY27G5E5CDB",
         "created_timestamp": "2025-06-02 15:06:43.378289"
@@ -69,7 +39,6 @@
       "id": "fee_rate_1",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "9.99",
         "percentage": null
@@ -80,6 +49,7 @@
         "billing_entity_uuid": "M4JT4XQCPWPMW7WGA4G1Z5NGED",
         "fee_category": "APP_SUB_3P_RETAIL",
         "fee_code": "MW63DAWPN6JGY.S",
+        "currency": "USD",
         "effective_date": "2017-02-15",
         "created_timestamp": "2025-02-25 19:36:38.626269",
         "modified_timestamp": "2025-02-25 19:36:38.626269",
@@ -90,7 +60,6 @@
       "id": "fee_rate_2",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "59.99",
         "percentage": null
@@ -101,6 +70,7 @@
         "billing_entity_uuid": "M4JT4XQCPWPMW7WGA4G1Z5NGED",
         "fee_category": "APP_SUB_3P_RETAIL",
         "fee_code": "E2ATEB4GHYFCE.S",
+        "currency": "USD",
         "effective_date": "2016-02-09",
         "created_timestamp": "2025-02-25 19:41:08.122154",
         "modified_timestamp": "2025-02-25 19:41:08.122154",
@@ -111,7 +81,6 @@
       "id": "fee_rate_3",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "99",
         "percentage": null
@@ -122,6 +91,7 @@
         "billing_entity_uuid": "M4JT4XQCPWPMW7WGA4G1Z5NGED",
         "fee_category": "APP_SUB_3P_RETAIL",
         "fee_code": "BCMPKE5Z10A38.S",
+        "currency": "USD",
         "effective_date": "2017-02-17",
         "created_timestamp": "2025-02-25 19:05:31.108052",
         "modified_timestamp": "2025-02-25 19:05:31.108052",
@@ -132,7 +102,6 @@
       "id": "fee_rate_4",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "19.95",
         "percentage": null
@@ -143,6 +112,7 @@
         "billing_entity_uuid": "8E7KTPHJRBHP16EQB5RS2P8D0Q",
         "fee_category": "DEVICE_RETAIL",
         "fee_code": "RegisterPDVT",
+        "currency": "USD",
         "effective_date": "2025-01-01",
         "created_timestamp": "2025-01-30 16:38:02.379723",
         "modified_timestamp": "2025-01-30 16:38:33.706835",
@@ -153,7 +123,6 @@
       "id": "fee_rate_5",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "-19.95",
         "percentage": null
@@ -164,6 +133,7 @@
         "billing_entity_uuid": "8E7KTPHJRBHP16EQB5RS2P8D0Q",
         "fee_category": "DEVICE_RETAIL_MOD",
         "fee_code": "RegisterPDVTIncl1st",
+        "currency": "USD",
         "effective_date": "2025-01-01",
         "created_timestamp": "2025-01-30 16:38:02.480183",
         "modified_timestamp": "2025-01-30 16:38:33.706835",
@@ -174,7 +144,6 @@
       "id": "fee_rate_6",
       "table": "fee_rate",
       "minimal": {
-        "currency": "USD",
         "apply_type": "PER_ITEM",
         "per_item_amount": "49.95",
         "percentage": null
@@ -185,6 +154,7 @@
         "billing_entity_uuid": "8E7KTPHJRBHP16EQB5RS2P8D0Q",
         "fee_category": "PLAN_RETAIL",
         "fee_code": "RegisterPDVT",
+        "currency": "USD",
         "effective_date": "2025-01-01",
         "created_timestamp": "2025-01-30 16:38:02.359401",
         "modified_timestamp": "2025-01-30 16:38:33.706835",
@@ -195,8 +165,6 @@
       "id": "fee_summary_1",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "APP_SUB_3P_RETAIL",
-        "fee_code": "MW63DAWPN6JGY.S",
         "total_period_units": "1",
         "total_basis_amount": "0",
         "total_fee_amount": "9.99"
@@ -206,6 +174,8 @@
         "uuid": "K576N1W35XYEVW7VH1JVDY1XRT",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "APP_SUB_3P_RETAIL",
+        "fee_code": "MW63DAWPN6JGY.S",
         "currency": "USD",
         "abs_period_units": "1",
         "abs_basis_amount": "0",
@@ -224,8 +194,6 @@
       "id": "fee_summary_2",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "APP_SUB_3P_RETAIL",
-        "fee_code": "E2ATEB4GHYFCE.S",
         "total_period_units": "1",
         "total_basis_amount": "0",
         "total_fee_amount": "59.99"
@@ -235,6 +203,8 @@
         "uuid": "4FM5SS3WW7WT7GZZWFMSS9YQP6",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "APP_SUB_3P_RETAIL",
+        "fee_code": "E2ATEB4GHYFCE.S",
         "currency": "USD",
         "abs_period_units": "1",
         "abs_basis_amount": "0",
@@ -253,8 +223,6 @@
       "id": "fee_summary_3",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "APP_SUB_3P_RETAIL",
-        "fee_code": "BCMPKE5Z10A38.S",
         "total_period_units": "1",
         "total_basis_amount": "0",
         "total_fee_amount": "99"
@@ -264,6 +232,8 @@
         "uuid": "MH2Q9759T1FKMP887PMRQFMV9R",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "APP_SUB_3P_RETAIL",
+        "fee_code": "BCMPKE5Z10A38.S",
         "currency": "USD",
         "abs_period_units": "1",
         "abs_basis_amount": "0",
@@ -282,8 +252,6 @@
       "id": "fee_summary_4",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "DEVICE_RETAIL",
-        "fee_code": "RegisterPDVT",
         "total_period_units": "3",
         "total_basis_amount": "0",
         "total_fee_amount": "59.85"
@@ -293,6 +261,8 @@
         "uuid": "VC74T4AJ9R5X148DSRS95R5PF3",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "DEVICE_RETAIL",
+        "fee_code": "RegisterPDVT",
         "currency": "USD",
         "abs_period_units": "3",
         "abs_basis_amount": "0",
@@ -311,8 +281,6 @@
       "id": "fee_summary_5",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "DEVICE_RETAIL_MOD",
-        "fee_code": "RegisterPDVTIncl1st",
         "total_period_units": "1",
         "total_basis_amount": "0",
         "total_fee_amount": "-19.95"
@@ -322,6 +290,8 @@
         "uuid": "9VEDCKTVN2PTAYAQ8TCQV3ZNGZ",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "DEVICE_RETAIL_MOD",
+        "fee_code": "RegisterPDVTIncl1st",
         "currency": "USD",
         "abs_period_units": "1",
         "abs_basis_amount": "0",
@@ -340,8 +310,6 @@
       "id": "fee_summary_6",
       "table": "fee_summary",
       "minimal": {
-        "fee_category": "PLAN_RETAIL",
-        "fee_code": "RegisterPDVT",
         "total_period_units": "1",
         "total_basis_amount": "0",
         "total_fee_amount": "49.95"
@@ -351,6 +319,8 @@
         "uuid": "FD7GD3YK93ZZS4C1DA6C7W9AER",
         "billing_entity_uuid": "JW8H2B9BT6B11R2HHXY3HYQCN6",
         "billing_date": "2025-06-01",
+        "fee_category": "PLAN_RETAIL",
+        "fee_code": "RegisterPDVT",
         "currency": "USD",
         "abs_period_units": "1",
         "abs_basis_amount": "0",
@@ -369,7 +339,6 @@
       "id": "settlement_1",
       "table": "settlement",
       "minimal": {
-        "currency": "USD",
         "total_amount": "9.99",
         "lookup_ledger_account_key": "Incur.App.E8HJHPCT8AR08"
       },
@@ -381,6 +350,7 @@
         "entity_uuid": "062X8PVY3XWB1",
         "alternate_id": "209225173886",
         "payable_receivable": "RECEIVABLE",
+        "currency": "USD",
         "fee_amount": "9.99",
         "tax1_amount": "0",
         "tax2_amount": "0",
@@ -398,7 +368,6 @@
       "id": "settlement_2",
       "table": "settlement",
       "minimal": {
-        "currency": "USD",
         "total_amount": "59.99",
         "lookup_ledger_account_key": "Incur.App.38NB0ETSWWP6C"
       },
@@ -410,6 +379,7 @@
         "entity_uuid": "062X8PVY3XWB1",
         "alternate_id": "209225173886",
         "payable_receivable": "RECEIVABLE",
+        "currency": "USD",
         "fee_amount": "59.99",
         "tax1_amount": "0",
         "tax2_amount": "0",
@@ -427,7 +397,6 @@
       "id": "settlement_3",
       "table": "settlement",
       "minimal": {
-        "currency": "USD",
         "total_amount": "99",
         "lookup_ledger_account_key": "Incur.App.VX7BFWEXXQ1CW"
       },
@@ -439,6 +408,7 @@
         "entity_uuid": "062X8PVY3XWB1",
         "alternate_id": "209225173886",
         "payable_receivable": "RECEIVABLE",
+        "currency": "USD",
         "fee_amount": "99",
         "tax1_amount": "0",
         "tax2_amount": "0",
@@ -456,7 +426,6 @@
       "id": "settlement_4",
       "table": "settlement",
       "minimal": {
-        "currency": "USD",
         "total_amount": "89.85",
         "lookup_ledger_account_key": "Incur.Plan"
       },
@@ -468,6 +437,7 @@
         "entity_uuid": "062X8PVY3XWB1",
         "alternate_id": "209225173886",
         "payable_receivable": "RECEIVABLE",
+        "currency": "USD",
         "fee_amount": "89.85",
         "tax1_amount": "0",
         "tax2_amount": "0",
@@ -489,50 +459,26 @@
     },
     {
       "source": "invoice_info_1",
-      "target": "fee_rate_1"
-    },
-    {
-      "source": "invoice_info_1",
-      "target": "fee_rate_2"
-    },
-    {
-      "source": "invoice_info_1",
-      "target": "fee_rate_3"
-    },
-    {
-      "source": "invoice_info_1",
-      "target": "fee_rate_4"
-    },
-    {
-      "source": "invoice_info_1",
-      "target": "fee_rate_5"
-    },
-    {
-      "source": "invoice_info_1",
-      "target": "fee_rate_6"
-    },
-    {
-      "source": "fee_rate_1",
       "target": "fee_summary_1"
     },
     {
-      "source": "fee_rate_2",
+      "source": "invoice_info_1",
       "target": "fee_summary_2"
     },
     {
-      "source": "fee_rate_3",
+      "source": "invoice_info_1",
       "target": "fee_summary_3"
     },
     {
-      "source": "fee_rate_4",
+      "source": "invoice_info_1",
       "target": "fee_summary_4"
     },
     {
-      "source": "fee_rate_5",
+      "source": "invoice_info_1",
       "target": "fee_summary_5"
     },
     {
-      "source": "fee_rate_6",
+      "source": "invoice_info_1",
       "target": "fee_summary_6"
     },
     {
@@ -540,56 +486,48 @@
       "target": "settlement_1"
     },
     {
+      "source": "fee_summary_1",
+      "target": "fee_rate_1"
+    },
+    {
       "source": "fee_summary_2",
       "target": "settlement_2"
+    },
+    {
+      "source": "fee_summary_2",
+      "target": "fee_rate_2"
     },
     {
       "source": "fee_summary_3",
       "target": "settlement_3"
     },
     {
+      "source": "fee_summary_3",
+      "target": "fee_rate_3"
+    },
+    {
       "source": "fee_summary_4",
       "target": "settlement_4"
+    },
+    {
+      "source": "fee_summary_4",
+      "target": "fee_rate_4"
     },
     {
       "source": "fee_summary_5",
       "target": "settlement_4"
     },
     {
+      "source": "fee_summary_5",
+      "target": "fee_rate_5"
+    },
+    {
       "source": "fee_summary_6",
       "target": "settlement_4"
     },
     {
-      "source": "settlement_1",
-      "target": "billing_entity_clover"
-    },
-    {
-      "source": "settlement_1",
-      "target": "billing_entity_us_support"
-    },
-    {
-      "source": "settlement_2",
-      "target": "billing_entity_clover"
-    },
-    {
-      "source": "settlement_2",
-      "target": "billing_entity_us_support"
-    },
-    {
-      "source": "settlement_3",
-      "target": "billing_entity_clover"
-    },
-    {
-      "source": "settlement_3",
-      "target": "billing_entity_us_support"
-    },
-    {
-      "source": "settlement_4",
-      "target": "billing_entity_clover"
-    },
-    {
-      "source": "settlement_4",
-      "target": "billing_entity_us_support"
+      "source": "fee_summary_6",
+      "target": "fee_rate_6"
     }
   ]
 }

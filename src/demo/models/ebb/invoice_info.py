@@ -14,7 +14,6 @@ class MinimalInvoiceInfoMixin:
     # favor ones that seem fundamental to calculating an amount that will appear on a bill
     # a human can adjust this field later if they want to see more or less
     MINIMAL_FIELDS = {
-        'currency',
         'total_amount',
     }
 
